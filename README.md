@@ -8,7 +8,7 @@ currently anything is adjustable, when using the mixin defaults just start the
 tool.
 
 defaults:
-```python -i 20 -p 60```
+```python prometheus-loader.py -i 20 -p 60```
 
 custom
-```python -f ./example.txt -i 20 -p 60 -t 20```
+```python prometheus-loader.py -f ./example.txt -i 20 -p 60 -t 20```
