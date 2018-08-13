@@ -65,3 +65,8 @@ class Dashboards(object):
 
     def get_dashboards(self):
         return self.dashboards
+
+if __name__ == "__main__":
+    args = parse_args()
+    loader = Dashboards(args.gitrepo)
+    loader.get_dashboards()
