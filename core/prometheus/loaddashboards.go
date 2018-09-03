@@ -3,11 +3,11 @@ package prometheus
 import (
 	"encoding/json"
 	"flag"
-	"fmt"
-	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"log"
 	"net/http"
+
+	"gopkg.in/yaml.v2"
 )
 
 type Template struct {
@@ -48,10 +48,10 @@ type jsonDahboard struct {
 			Query string `json: "query"`
 		} `json: "list"`
 	} `json: "templating"`
-  Time struct {
-    From string `json: "from"`
-  } `json: "time"`
-  Refresh string `json: "refresh"`
+	Time struct {
+		From string `json: "from"`
+	} `json: "time"`
+	Refresh string `json: "refresh"`
 }
 
 func (yml *dashboardsDefenition) getyaml(yamlfile string) *dashboardsDefenition {
@@ -119,11 +119,11 @@ func DashboardLoader() []Dashboard {
 				Name:          name,
 				TargetQueries: jsondahboard.GetTargets(),
 				Templates:     jsondahboard.GetTemplates(),
-        Period: jsondahboard.GetTimePeriod(),
-        Interval: jsondahboard.GetRefreshInterval(),
-        Annoation: "",
+				Period:        jsondahboard.GetTimePeriod(),
+				Interval:      jsondahboard.GetRefreshInterval(),
+				Annoation:     "",
 			})
 		}
 	}
-  return dashboards
+	return dashboards
 }
